@@ -113,3 +113,74 @@
   - Sobre o padrão de projeto
     - A classe *MarketOperationScheduleBuilder* representa o "Builder".
     
+---
+
+### 5. UC05 - Consumir notificação de sistema externo
+
+  - [x] **Padrão de projeto:** Object Pool Pattern
+  - **Pré-requisito:** UC03
+  
+  #### 5.1. Regras de negócio
+
+    5.1.1. Uma operação de mercado pode ser agendada.  
+    5.1.2. Um agendamento deve ser composto por:
+      - Operação de mercado
+      - Data de início
+      - Data de término
+      - Hora agendada
+      - Tipo de recorrência: Sem recorrência, Diariamente, Semanalmente e Mensalmente
+      - Estado: Ativo e Inativo
+      - Lista de email para notificação
+
+#### 5.2. Detalhes de implementação
+
+  - [x] **Pacote:** *com.phcarvalhome.pattern.objectpool*
+  - Sobre o padrão de projeto
+    - A classe *MarketOperationScheduleBuilder* representa o "Builder".
+
+---
+
+### 6. UC06 - Definir usuário
+
+  - [x] **Padrão de projeto:** Private Data Class Pattern
+  - **Pré-requisito:** UC03
+  
+  #### 6.1. Regras de negócio
+
+    6.1.1. Um usuário deve ser composto por:
+      - Identificador
+      - Email
+      - Senha
+      - Agência bancária
+      - Conta bancária
+      - Lista de operações de mercado
+    6.1.2. A senha apenas pode ser obtida de forma criptografada
+    6.1.3. A senha apenas pode ser configurada com a validação da senha atual
+    6.1.4. A agência e a conta bancárias apenas podem ser configuradas com a validação da senha atual
+    6.1.5. A lista de operações de mercado apenas pode ser obtida de forma imutável
+    6.1.6. A lista de operações de mercado apenas pode ser configurada pela adição de uma nova operação de mercado
+
+#### 6.2. Detalhes de implementação
+
+  - [x] **Pacote:** *com.phcarvalhome.pattern.privatedataclass*
+  - Sobre o padrão de projeto
+    - A classe *User* representa a "Private Data Class".
+    
+---
+
+### 7. UC07 - Obter, salvar, atualizar e remover usuário
+
+  - [x] **Padrão de projeto:** Adapter Pattern
+  - **Pré-requisito:** UC03
+  
+  #### 7.1. Regras de negócio
+
+    7.1.1. Um usuário pode ser obtido, salvo, atualizado e removido.  
+
+#### 7.2. Detalhes de implementação
+
+  - [x] **Pacote:** *com.phcarvalhome.pattern.adapter*
+  - Sobre o padrão de projeto
+    - A interface *IEntityDAO<T>* representa a nova API do "Adapter".
+    - A classe *UserDAOObjectAdapter* representa um "Object Adapter".
+    - A classe *UserDAOClassAdapter* representa um "Class Adapter".
