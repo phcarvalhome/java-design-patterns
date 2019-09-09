@@ -13,3 +13,33 @@
       - Uma classe *<PATTERN_NAME>Test* com os métodos de teste.
       - Um pacote *core* com a implementação principal do padrão de projeto.
       - Um pacote *business* com as implementações complementares necessárias para atender ao caso de uso.
+
+## Especificações de Casos de Uso
+
+### 1. UC01 - Criar notificação para departamento
+
+  - [x] **Padrão de projeto:** Abstract Factory Pattern 
+  - **Pré-requisito:** N/A
+
+#### 1.1. Regras de negócio
+
+    1.1.1. Uma notificação deve ser composta por:
+      - Destino
+      - Tipo de notificação
+      - Data e hora de criação
+    1.1.2. Apenas as notificações de Mercado Aberto e de Mercado Parado devem ser consideradas.  
+    1.1.3. Novas notificações podem ser consideradas posteriomente.  
+    1.1.4. Apenas os departamentos de TI e de RH devem ser considerados.  
+    1.1.5. Novos departamentos podem ser considerados posteriomente.
+
+#### 1.2. Detalhes de implementação
+
+  - [x] **Pacote:** *com.phcarvalhome.pattern.abstractfactory*
+  - Sobre as regras de negócio
+    - Cada método da interface *INotificationFactory* representa uma notificação.
+    - Cada implementação da interface *INotificationFactory* representa um departamento.
+  - Sobre o padrão de projeto
+    - Cada implementação da interface *INotificationFactory* representa uma "Factory".
+    - As classes *MarketOperation* e *Stock* representam as "Factory".
+  
+---
