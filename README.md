@@ -89,3 +89,27 @@
     - As classes *MarketOperation* e *Stock* representam os "Prototype".
 
 ---
+
+### 4. UC04 - Criar agendamento para operação de mercado
+
+  - [x] **Padrão de projeto:** Builder Pattern
+  - **Pré-requisito:** UC03
+  
+  #### 4.1. Regras de negócio
+
+    4.1.1. Uma operação de mercado pode ser agendada.  
+    4.1.2. Um agendamento deve ser composto por:
+      - Operação de mercado
+      - Data de início
+      - Data de término
+      - Hora agendada
+      - Tipo de recorrência: Sem recorrência, Diariamente, Semanalmente e Mensalmente
+      - Estado: Ativo e Inativo
+      - Lista de email para notificação
+
+#### 4.2. Detalhes de implementação
+
+  - [x] **Pacote:** *com.phcarvalhome.pattern.builder*
+  - Sobre o padrão de projeto
+    - A classe *MarketOperationScheduleBuilder* representa o "Builder".
+    
