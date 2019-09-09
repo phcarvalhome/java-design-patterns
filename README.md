@@ -43,3 +43,24 @@
     - As classes *MarketOperation* e *Stock* representam as "Factory".
   
 ---
+
+### 2. UC02 - Criar notificações em lote
+
+  - [x] **Padrão de projeto:** Singleton Pattern
+  - **Pré-requisito:** UC01
+
+#### 2.1. Regras de negócio
+
+    2.1.1. Apenas o lote de notificações de departamento deve ser considerado.  
+    2.1.2. Novos lotes podem ser considerados posteriomente.  
+    2.1.3. Apenas os departamentos de TI e de RH devem fazer parte do lote de notificações de departamento.  
+
+#### 2.2. Detalhes de implementação
+
+  - [x] **Pacote:** *com.phcarvalhome.pattern.singleton*
+  - Sobre as regras de negócio
+    - A classe *DepartmentNotificationFactoryBatch* representa o lote de notificações de departamento.
+  - Sobre o padrão de projeto
+    - A classe *DepartmentNotificationFactoryBatch* representa o "Singleton".
+  
+---
