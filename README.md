@@ -64,3 +64,28 @@
     - A classe *DepartmentNotificationFactoryBatch* representa o "Singleton".
   
 ---
+
+### 3. UC03 - Duplicar operação de mercado
+
+  - [x] **Padrão de projeto:** Prototype Pattern
+  - **Pré-requisito:** N/A
+  
+  #### 3.1. Regras de negócio
+
+    3.1.1. Uma operação de mercado realizada anteriormente pode ser duplicada.  
+    3.1.2. Uma operação de mercado deve ser composta por:
+      - Tipo de operação
+      - Ação
+      - Quantidade de ações
+    3.1.3. Uma ação deve ser composta pelo tipo de ação e pelo preço.  
+    3.1.4. A operação de mercado duplicada deve ser composta pelos mesmos valores da operação de mercado original, com 
+    exceção do valor do preço da ação que deve ser recalculado.
+
+#### 3.2. Detalhes de implementação
+
+  - [x] **Pacote:** *com.phcarvalhome.pattern.prototype*
+  - Sobre o padrão de projeto
+    - Cada implementação da interface *IPrototype<T>* representa um "Prototype".
+    - As classes *MarketOperation* e *Stock* representam os "Prototype".
+
+---
