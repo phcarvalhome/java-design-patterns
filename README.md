@@ -181,6 +181,7 @@
 
   - [x] **Pacote:** *com.phcarvalhome.pattern.adapter*
   - Sobre o padrão de projeto
-    - A interface *IEntityDAO<T>* representa a nova API do "Adapter".
-    - A classe *UserDAOObjectAdapter* representa um "Object Adapter".
-    - A classe *UserDAOClassAdapter* representa um "Class Adapter".
+    - A classe *EntityDAO* representa a antiga API de acesso ao repositório.
+    - A interface *IEntityDAO<T>* representa a nova API de acesso ao repositório.
+    - A classe *UserDAOObjectAdapter* representa um "Object Adapter" que adapta a antiga API para a nova API.
+    - A classe *UserDAOClassAdapter* representa um "Class Adapter" que adapta a antiga API para a nova API.
