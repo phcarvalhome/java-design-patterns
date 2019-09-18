@@ -6,7 +6,7 @@ import com.phcarvalhome.pattern.prototype.business.vo.MarketOperationTypeEnum;
 import com.phcarvalhome.pattern.prototype.core.Stock;
 import com.phcarvalhome.pattern.prototype.business.vo.StockTypeEnum;
 
-public class BuilderTest {
+public class PrivateDataClassTest {
 
     public static void main(String[] args) {
 //        getPassword();

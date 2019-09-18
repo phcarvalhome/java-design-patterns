@@ -4,7 +4,8 @@ import com.phcarvalhome.pattern.builder.business.MarketOperationSchedule;
 
 import java.time.LocalDate;
 
-public class CompositeMarketOperationScheduleEvent extends AbstractMarketOperationScheduleEvent {
+public class CompositeMarketOperationScheduleEvent
+        extends AbstractMarketOperationScheduleEvent {
 
     private IMarketOperationScheduleEvent nextEvent;
 
