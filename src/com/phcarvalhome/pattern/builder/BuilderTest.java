@@ -21,7 +21,6 @@ public class BuilderTest {
 
         MarketOperationScheduleBuilder builder = new MarketOperationScheduleBuilder();
         BuilderClient builderClient = new BuilderClient(builder);
-
         MarketOperationSchedule marketOperationSchedule = builderClient.getMarketOperationScheduleBuilder()
                 .ofStockType(StockTypeEnum.PETR4)
                 .ofMarketOperationType(MarketOperationTypeEnum.SELL)
@@ -42,7 +41,6 @@ public class BuilderTest {
 
         MarketOperationScheduleBuilder builder = new MarketOperationScheduleBuilder();
         BuilderClient builderClient = new BuilderClient(builder);
-
         MarketOperationSchedule marketOperationSchedule = builderClient.getMarketOperationScheduleBuilder()
                 .ofStockType(StockTypeEnum.VALE3)
                 .ofMarketOperationType(MarketOperationTypeEnum.BUY)
