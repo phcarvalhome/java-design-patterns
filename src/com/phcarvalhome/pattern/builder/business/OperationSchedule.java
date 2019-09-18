@@ -1,16 +1,16 @@
 package com.phcarvalhome.pattern.builder.business;
 
 import com.phcarvalhome.pattern.builder.business.vo.RecurrenceTypeEnum;
-import com.phcarvalhome.pattern.prototype.core.MarketOperation;
+import com.phcarvalhome.pattern.prototype.core.Operation;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MarketOperationSchedule {
+public class OperationSchedule {
 
-    private MarketOperation marketOperation;
+    private Operation operation;
     private LocalDate startDate;
     private LocalDate endDate;
     private LocalTime scheduledTime;
@@ -18,8 +18,8 @@ public class MarketOperationSchedule {
     private boolean active;
     private List<String> notificationEmailList;
 
-    public MarketOperationSchedule(MarketOperation marketOperation) {
-        this.marketOperation = marketOperation;
+    public OperationSchedule(Operation operation) {
+        this.operation = operation;
         startDate = LocalDate.now();
         endDate = LocalDate.now();
         scheduledTime = LocalTime.now();
@@ -28,12 +28,12 @@ public class MarketOperationSchedule {
         notificationEmailList = new ArrayList<>();
     }
 
-    public MarketOperation getMarketOperation() {
-        return marketOperation;
+    public Operation getOperation() {
+        return operation;
     }
 
-    public void setMarketOperation(MarketOperation marketOperation) {
-        this.marketOperation = marketOperation;
+    public void setOperation(Operation operation) {
+        this.operation = operation;
     }
 
     public LocalDate getStartDate() {
@@ -82,8 +82,8 @@ public class MarketOperationSchedule {
 
     @Override
     public String toString() {
-        return "MarketOperationSchedule{" +
-                "marketOperation=" + marketOperation +
+        return "OperationSchedule{" +
+                "operation=" + operation +
                 ", startDate=" + startDate +
                 ", endDate=" + endDate +
                 ", scheduledTime=" + scheduledTime +

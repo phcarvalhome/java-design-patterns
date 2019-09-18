@@ -1,25 +1,25 @@
 package com.phcarvalhome.pattern.prototype.core;
 
-import com.phcarvalhome.pattern.prototype.business.vo.MarketOperationTypeEnum;
+import com.phcarvalhome.pattern.prototype.business.vo.OperationTypeEnum;
 
-public class MarketOperation implements IPrototype<MarketOperation> {
+public class Operation implements IPrototype<Operation> {
 
-    private MarketOperationTypeEnum type;
+    private OperationTypeEnum type;
     private Stock stock;
     private int stockQuantity;
 
-    public MarketOperation(MarketOperationTypeEnum type, Stock stock, int stockQuantity) {
+    public Operation(OperationTypeEnum type, Stock stock, int stockQuantity) {
         this.type = type;
         this.stock = stock;
         this.stockQuantity = stockQuantity;
     }
 
     @Override
-    public MarketOperation copy() {
-        return new MarketOperation(type, stock.copy(), stockQuantity);
+    public Operation copy() {
+        return new Operation(type, stock.copy(), stockQuantity);
     }
 
-    public MarketOperationTypeEnum getType() {
+    public OperationTypeEnum getType() {
         return type;
     }
 
@@ -33,7 +33,7 @@ public class MarketOperation implements IPrototype<MarketOperation> {
 
     @Override
     public String toString() {
-        return "MarketOperation{" +
+        return "Operation{" +
                 "type=" + type +
                 ", stock=" + stock +
                 ", stockQuantity=" + stockQuantity +

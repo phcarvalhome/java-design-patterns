@@ -1,16 +1,16 @@
 package com.phcarvalhome.pattern.builder.client;
 
-import com.phcarvalhome.pattern.builder.core.IMarketOperationScheduleBuilder;
+import com.phcarvalhome.pattern.builder.core.IOperationScheduleBuilder;
 
 public class BuilderClient {
 
-    private IMarketOperationScheduleBuilder marketOperationScheduleBuilder;
+    private IOperationScheduleBuilder operationScheduleBuilder;
 
-    public BuilderClient(IMarketOperationScheduleBuilder marketOperationScheduleBuilder) {
-        this.marketOperationScheduleBuilder = marketOperationScheduleBuilder;
+    public BuilderClient(IOperationScheduleBuilder operationScheduleBuilder) {
+        this.operationScheduleBuilder = operationScheduleBuilder;
     }
 
-    public IMarketOperationScheduleBuilder getMarketOperationScheduleBuilder() {
-        return marketOperationScheduleBuilder.initialize();
+    public IOperationScheduleBuilder getOperationScheduleBuilder() {
+        return operationScheduleBuilder.initialize();
     }
 }

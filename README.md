@@ -40,7 +40,7 @@
     - Cada implementação da interface *INotificationFactory* representa um departamento.
   - Sobre o padrão de projeto
     - Cada implementação da interface *INotificationFactory* representa uma "Factory".
-    - As classes *MarketOperation* e *Stock* representam as "Factory".
+    - As classes *Operation* e *Stock* representam as "Factory".
   
 ---
 
@@ -86,7 +86,7 @@
   - [x] **Pacote:** *com.phcarvalhome.pattern.prototype*
   - Sobre o padrão de projeto
     - Cada implementação da interface *IPrototype<T>* representa um "Prototype".
-    - As classes *MarketOperation* e *Stock* representam os "Prototype".
+    - As classes *Operation* e *Stock* representam os "Prototype".
 
 ---
 
@@ -111,7 +111,7 @@
 
   - [x] **Pacote:** *com.phcarvalhome.pattern.builder*
   - Sobre o padrão de projeto
-    - A classe *MarketOperationScheduleBuilder* representa o "Builder".
+    - A classe *OperationScheduleBuilder* representa o "Builder".
     
 ---
 
@@ -136,7 +136,7 @@
 
   - [x] **Pacote:** *com.phcarvalhome.pattern.objectpool*
   - Sobre o padrão de projeto
-    - A classe *MarketOperationScheduleBuilder* representa o "Builder".
+    - A classe *OperationScheduleBuilder* representa o "Builder".
 
 ---
 

@@ -1,8 +1,8 @@
 package com.phcarvalhome.pattern.privatedataclass;
 
 import com.phcarvalhome.pattern.privatedataclass.core.User;
-import com.phcarvalhome.pattern.prototype.core.MarketOperation;
-import com.phcarvalhome.pattern.prototype.business.vo.MarketOperationTypeEnum;
+import com.phcarvalhome.pattern.prototype.core.Operation;
+import com.phcarvalhome.pattern.prototype.business.vo.OperationTypeEnum;
 import com.phcarvalhome.pattern.prototype.core.Stock;
 import com.phcarvalhome.pattern.prototype.business.vo.StockTypeEnum;
 
@@ -12,8 +12,8 @@ public class PrivateDataClassTest {
 //        getPassword();
 //        changeUserPasswordWithSuccess();
 //        changeUserPasswordWithFail();
-//        addMarketOperationWithSuccess();
-//        addMarketOperationWithFail();
+//        addOperationWithSuccess();
+//        addOperationWithFail();
     }
 
     private static void getPassword() {
@@ -64,8 +64,8 @@ public class PrivateDataClassTest {
         System.out.println(">>> TEST END >>> changeUserPasswordWithFail");
     }
 
-    private static void addMarketOperationWithSuccess() {
-        System.out.println(">>> TEST BEGINNING >>> addMarketOperationWithSuccess");
+    private static void addOperationWithSuccess() {
+        System.out.println(">>> TEST BEGINNING >>> addOperationWithSuccess");
 
         User user = new User("phcarvalhome@gmail.com",
                 "123456",
@@ -75,16 +75,16 @@ public class PrivateDataClassTest {
         System.out.println("--- Built user: " + user);
 
         Stock stock = new Stock(StockTypeEnum.BBAS3);
-        MarketOperation marketOperation = new MarketOperation(MarketOperationTypeEnum.BUY, stock, 20);
+        Operation operation = new Operation(OperationTypeEnum.BUY, stock, 20);
 
-        user.addMarketOperation(marketOperation);
+        user.addOperation(operation);
 
-        System.out.println("--- Market operation list: " + user.getMarketOperationList());
-        System.out.println(">>> TEST END >>> addMarketOperationWithSuccess");
+        System.out.println("--- Operation list: " + user.getOperationList());
+        System.out.println(">>> TEST END >>> addOperationWithSuccess");
     }
 
-    private static void addMarketOperationWithFail() {
-        System.out.println(">>> TEST BEGINNING >>> addMarketOperationWithFail");
+    private static void addOperationWithFail() {
+        System.out.println(">>> TEST BEGINNING >>> addOperationWithFail");
 
         User user = new User("phcarvalhome@gmail.com",
                 "123456",
@@ -94,11 +94,11 @@ public class PrivateDataClassTest {
         System.out.println("--- Built user: " + user);
 
         Stock stock = new Stock(StockTypeEnum.BBAS3);
-        MarketOperation marketOperation = new MarketOperation(MarketOperationTypeEnum.BUY, stock, 20);
+        Operation operation = new Operation(OperationTypeEnum.BUY, stock, 20);
 
-        user.getMarketOperationList().add(marketOperation);
+        user.getOperationList().add(operation);
 
-        System.out.println("--- Market operation list: " + user.getMarketOperationList());
-        System.out.println(">>> TEST END >>> addMarketOperationWithFail");
+        System.out.println("--- Operation list: " + user.getOperationList());
+        System.out.println(">>> TEST END >>> addOperationWithFail");
     }
 }

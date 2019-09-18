@@ -5,7 +5,7 @@ import com.phcarvalhome.pattern.abstractfactory.core.INotificationFactory;
 
 public class AbstractFactoryClient {
 
-    private INotificationFactory marketNotificationFactory;
+    private INotificationFactory marketNotificationFactory; //TODO tirar esse market daqui e deixar genérico...
 
     public AbstractFactoryClient(INotificationFactory marketNotificationFactory) {
         this.marketNotificationFactory = marketNotificationFactory;

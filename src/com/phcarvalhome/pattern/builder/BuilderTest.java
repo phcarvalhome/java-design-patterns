@@ -1,9 +1,9 @@
 package com.phcarvalhome.pattern.builder;
 
-import com.phcarvalhome.pattern.builder.business.MarketOperationSchedule;
+import com.phcarvalhome.pattern.builder.business.OperationSchedule;
 import com.phcarvalhome.pattern.builder.client.BuilderClient;
-import com.phcarvalhome.pattern.builder.core.MarketOperationScheduleBuilder;
-import com.phcarvalhome.pattern.prototype.business.vo.MarketOperationTypeEnum;
+import com.phcarvalhome.pattern.builder.core.OperationScheduleBuilder;
+import com.phcarvalhome.pattern.prototype.business.vo.OperationTypeEnum;
 import com.phcarvalhome.pattern.prototype.business.vo.StockTypeEnum;
 
 import java.time.LocalDate;
@@ -12,18 +12,18 @@ import java.time.LocalTime;
 public class BuilderTest {
 
     public static void main(String[] args) {
-        buildMarketOperationScheduleForNextWeekInAfternoonInEveryDayOnActivation();
-        buildMarketOperationScheduleForThisYearInEveryMonthOnDeactivationWithNotification();
+        buildOperationScheduleForNextWeekInAfternoonInEveryDayOnActivation();
+        buildOperationScheduleForThisYearInEveryMonthOnDeactivationWithNotification();
     }
 
-    private static void buildMarketOperationScheduleForNextWeekInAfternoonInEveryDayOnActivation() {
-        System.out.println(">>> TEST BEGINNING >>> buildMarketOperationScheduleForNextWeekInAfternoonInEveryDayOnActivation");
+    private static void buildOperationScheduleForNextWeekInAfternoonInEveryDayOnActivation() {
+        System.out.println(">>> TEST BEGINNING >>> buildOperationScheduleForNextWeekInAfternoonInEveryDayOnActivation");
 
-        MarketOperationScheduleBuilder builder = new MarketOperationScheduleBuilder();
+        OperationScheduleBuilder builder = new OperationScheduleBuilder();
         BuilderClient builderClient = new BuilderClient(builder);
-        MarketOperationSchedule marketOperationSchedule = builderClient.getMarketOperationScheduleBuilder()
+        OperationSchedule operationSchedule = builderClient.getOperationScheduleBuilder()
                 .ofStockType(StockTypeEnum.PETR4)
-                .ofMarketOperationType(MarketOperationTypeEnum.SELL)
+                .ofOperationType(OperationTypeEnum.SELL)
                 .ofStockQuantity(10)
                 .from(LocalDate.now().plusWeeks(1))
                 .to(LocalDate.now().plusWeeks(2))
@@ -32,18 +32,18 @@ public class BuilderTest {
                 .active()
                 .getInstance();
 
-        System.out.println("--- Built market operation schedule: " + marketOperationSchedule);
-        System.out.println(">>> TEST END >>> buildMarketOperationScheduleForNextWeekInAfternoonInEveryDayOnActivation");
+        System.out.println("--- Built operation schedule: " + operationSchedule);
+        System.out.println(">>> TEST END >>> buildOperationScheduleForNextWeekInAfternoonInEveryDayOnActivation");
     }
 
-    private static void buildMarketOperationScheduleForThisYearInEveryMonthOnDeactivationWithNotification() {
-        System.out.println(">>> TEST BEGINNING >>> buildMarketOperationScheduleForThisYearInEveryMonthOnDeactivationWithNotification");
+    private static void buildOperationScheduleForThisYearInEveryMonthOnDeactivationWithNotification() {
+        System.out.println(">>> TEST BEGINNING >>> buildOperationScheduleForThisYearInEveryMonthOnDeactivationWithNotification");
 
-        MarketOperationScheduleBuilder builder = new MarketOperationScheduleBuilder();
+        OperationScheduleBuilder builder = new OperationScheduleBuilder();
         BuilderClient builderClient = new BuilderClient(builder);
-        MarketOperationSchedule marketOperationSchedule = builderClient.getMarketOperationScheduleBuilder()
+        OperationSchedule operationSchedule = builderClient.getOperationScheduleBuilder()
                 .ofStockType(StockTypeEnum.VALE3)
-                .ofMarketOperationType(MarketOperationTypeEnum.BUY)
+                .ofOperationType(OperationTypeEnum.BUY)
                 .ofStockQuantity(100)
                 .from(LocalDate.now())
                 .to(LocalDate.now().plusYears(1))
@@ -53,7 +53,7 @@ public class BuilderTest {
                 .ofNotificationEmail("phcarvalhome@outlook.com")
                 .getInstance();
 
-        System.out.println("--- Built market operation schedule: " + marketOperationSchedule);
-        System.out.println(">>> TEST END >>> buildMarketOperationScheduleForThisYearInEveryMonthOnDeactivationWithNotification");
+        System.out.println("--- Built operation schedule: " + operationSchedule);
+        System.out.println(">>> TEST END >>> buildOperationScheduleForThisYearInEveryMonthOnDeactivationWithNotification");
     }
 }

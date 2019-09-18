@@ -1,21 +1,21 @@
 package com.phcarvalhome.pattern.composite.core;
 
-import com.phcarvalhome.pattern.builder.business.MarketOperationSchedule;
-import com.phcarvalhome.pattern.prototype.business.vo.MarketOperationTypeEnum;
+import com.phcarvalhome.pattern.builder.business.OperationSchedule;
+import com.phcarvalhome.pattern.prototype.business.vo.OperationTypeEnum;
 import com.phcarvalhome.pattern.prototype.business.vo.StockTypeEnum;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
 
-public interface IMarketOperationScheduleEvent {
+public interface IOperationScheduleEvent {
 
-    MarketOperationSchedule getSchedule();
+    OperationSchedule getSchedule();
 
     LocalDate getDate();
 
     LocalTime getScheduledTime();
 
-    MarketOperationTypeEnum getOperationType();
+    OperationTypeEnum getOperationType();
 
     int getStockQuantity();
 

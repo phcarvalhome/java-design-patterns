@@ -1,11 +1,11 @@
 package com.phcarvalhome.pattern.composite;
 
-import com.phcarvalhome.pattern.builder.business.MarketOperationSchedule;
+import com.phcarvalhome.pattern.builder.business.OperationSchedule;
 import com.phcarvalhome.pattern.builder.client.BuilderClient;
-import com.phcarvalhome.pattern.builder.core.MarketOperationScheduleBuilder;
-import com.phcarvalhome.pattern.composite.core.AbstractMarketOperationScheduleEvent;
-import com.phcarvalhome.pattern.composite.core.IMarketOperationScheduleEvent;
-import com.phcarvalhome.pattern.prototype.business.vo.MarketOperationTypeEnum;
+import com.phcarvalhome.pattern.builder.core.OperationScheduleBuilder;
+import com.phcarvalhome.pattern.composite.core.AbstractOperationScheduleEvent;
+import com.phcarvalhome.pattern.composite.core.IOperationScheduleEvent;
+import com.phcarvalhome.pattern.prototype.business.vo.OperationTypeEnum;
 import com.phcarvalhome.pattern.prototype.business.vo.StockTypeEnum;
 
 import java.time.LocalDate;
@@ -14,19 +14,19 @@ import java.time.LocalTime;
 public class CompositeTest {
 
     public static void main(String[] args) {
-        buildMarketOperationScheduleEventForNextTwoDaysInEveryDay();
-        buildMarketOperationScheduleEventForNextTreeWeeksInEveryWeek();
-        buildMarketOperationScheduleEventForNextFourMonthsInEveryMonth();
+        buildOperationScheduleEventForNextTwoDaysInEveryDay();
+        buildOperationScheduleEventForNextTreeWeeksInEveryWeek();
+        buildOperationScheduleEventForNextFourMonthsInEveryMonth();
     }
 
-    private static void buildMarketOperationScheduleEventForNextTwoDaysInEveryDay() {
-        System.out.println(">>> TEST BEGINNING >>> buildMarketOperationScheduleEventForNextTwoDaysInEveryDay");
+    private static void buildOperationScheduleEventForNextTwoDaysInEveryDay() {
+        System.out.println(">>> TEST BEGINNING >>> buildOperationScheduleEventForNextTwoDaysInEveryDay");
 
-        MarketOperationScheduleBuilder builder = new MarketOperationScheduleBuilder();
+        OperationScheduleBuilder builder = new OperationScheduleBuilder();
         BuilderClient builderClient = new BuilderClient(builder);
-        MarketOperationSchedule marketOperationSchedule = builderClient.getMarketOperationScheduleBuilder()
+        OperationSchedule operationSchedule = builderClient.getOperationScheduleBuilder()
                 .ofStockType(StockTypeEnum.PETR4)
-                .ofMarketOperationType(MarketOperationTypeEnum.BUY)
+                .ofOperationType(OperationTypeEnum.BUY)
                 .ofStockQuantity(10)
                 .from(LocalDate.now())
                 .to(LocalDate.now().plusDays(2))
@@ -35,23 +35,24 @@ public class CompositeTest {
                 .active()
                 .getInstance();
 
-        System.out.println("--- Built market operation schedule: " + marketOperationSchedule);
+        System.out.println("--- Built operation schedule: " + operationSchedule);
 
-        IMarketOperationScheduleEvent marketOperationScheduleEvent = AbstractMarketOperationScheduleEvent.from(marketOperationSchedule);
+        //TODO add um client...
+        IOperationScheduleEvent operationScheduleEvent = AbstractOperationScheduleEvent.from(operationSchedule);
 
-        System.out.println("--- Market operation schedule event stock quantity: " + marketOperationScheduleEvent.getStockQuantity());
-        System.out.println("--- Market operation schedule event price: " + marketOperationScheduleEvent.getPrice());
-        System.out.println(">>> TEST END >>> buildMarketOperationScheduleEventForNextTwoDaysInEveryDay");
+        System.out.println("--- Operation schedule event stock quantity: " + operationScheduleEvent.getStockQuantity());
+        System.out.println("--- Operation schedule event price: " + operationScheduleEvent.getPrice());
+        System.out.println(">>> TEST END >>> buildOperationScheduleEventForNextTwoDaysInEveryDay");
     }
 
-    private static void buildMarketOperationScheduleEventForNextTreeWeeksInEveryWeek() {
-        System.out.println(">>> TEST BEGINNING >>> buildMarketOperationScheduleEventForNextTreeWeeksInEveryWeek");
+    private static void buildOperationScheduleEventForNextTreeWeeksInEveryWeek() {
+        System.out.println(">>> TEST BEGINNING >>> buildOperationScheduleEventForNextTreeWeeksInEveryWeek");
 
-        MarketOperationScheduleBuilder builder = new MarketOperationScheduleBuilder();
+        OperationScheduleBuilder builder = new OperationScheduleBuilder();
         BuilderClient builderClient = new BuilderClient(builder);
-        MarketOperationSchedule marketOperationSchedule = builderClient.getMarketOperationScheduleBuilder()
+        OperationSchedule operationSchedule = builderClient.getOperationScheduleBuilder()
                 .ofStockType(StockTypeEnum.PETR4)
-                .ofMarketOperationType(MarketOperationTypeEnum.BUY)
+                .ofOperationType(OperationTypeEnum.BUY)
                 .ofStockQuantity(10)
                 .from(LocalDate.now())
                 .to(LocalDate.now().plusWeeks(3))
@@ -60,23 +61,23 @@ public class CompositeTest {
                 .active()
                 .getInstance();
 
-        System.out.println("--- Built market operation schedule: " + marketOperationSchedule);
+        System.out.println("--- Built operation schedule: " + operationSchedule);
 
-        IMarketOperationScheduleEvent marketOperationScheduleEvent = AbstractMarketOperationScheduleEvent.from(marketOperationSchedule);
+        IOperationScheduleEvent operationScheduleEvent = AbstractOperationScheduleEvent.from(operationSchedule);
 
-        System.out.println("--- Market operation schedule event stock quantity: " + marketOperationScheduleEvent.getStockQuantity());
-        System.out.println("--- Market operation schedule event price: " + marketOperationScheduleEvent.getPrice());
-        System.out.println(">>> TEST END >>> buildMarketOperationScheduleEventForNextTreeWeeksInEveryWeek");
+        System.out.println("--- Operation schedule event stock quantity: " + operationScheduleEvent.getStockQuantity());
+        System.out.println("--- Operation schedule event price: " + operationScheduleEvent.getPrice());
+        System.out.println(">>> TEST END >>> buildOperationScheduleEventForNextTreeWeeksInEveryWeek");
     }
 
-    private static void buildMarketOperationScheduleEventForNextFourMonthsInEveryMonth() {
-        System.out.println(">>> TEST BEGINNING >>> buildMarketOperationScheduleEventForNextFourMonthsInEveryMonth");
+    private static void buildOperationScheduleEventForNextFourMonthsInEveryMonth() {
+        System.out.println(">>> TEST BEGINNING >>> buildOperationScheduleEventForNextFourMonthsInEveryMonth");
 
-        MarketOperationScheduleBuilder builder = new MarketOperationScheduleBuilder();
+        OperationScheduleBuilder builder = new OperationScheduleBuilder();
         BuilderClient builderClient = new BuilderClient(builder);
-        MarketOperationSchedule marketOperationSchedule = builderClient.getMarketOperationScheduleBuilder()
+        OperationSchedule operationSchedule = builderClient.getOperationScheduleBuilder()
                 .ofStockType(StockTypeEnum.PETR4)
-                .ofMarketOperationType(MarketOperationTypeEnum.BUY)
+                .ofOperationType(OperationTypeEnum.BUY)
                 .ofStockQuantity(10)
                 .from(LocalDate.now())
                 .to(LocalDate.now().plusMonths(4))
@@ -85,12 +86,12 @@ public class CompositeTest {
                 .active()
                 .getInstance();
 
-        System.out.println("--- Built market operation schedule: " + marketOperationSchedule);
+        System.out.println("--- Built operation schedule: " + operationSchedule);
 
-        IMarketOperationScheduleEvent marketOperationScheduleEvent = AbstractMarketOperationScheduleEvent.from(marketOperationSchedule);
+        IOperationScheduleEvent operationScheduleEvent = AbstractOperationScheduleEvent.from(operationSchedule);
 
-        System.out.println("--- Market operation schedule event stock quantity: " + marketOperationScheduleEvent.getStockQuantity());
-        System.out.println("--- Market operation schedule event price: " + marketOperationScheduleEvent.getPrice());
-        System.out.println(">>> TEST END >>> buildMarketOperationScheduleEventForNextFourMonthsInEveryMonth");
+        System.out.println("--- Operation schedule event stock quantity: " + operationScheduleEvent.getStockQuantity());
+        System.out.println("--- Operation schedule event price: " + operationScheduleEvent.getPrice());
+        System.out.println(">>> TEST END >>> buildOperationScheduleEventForNextFourMonthsInEveryMonth");
     }
 }

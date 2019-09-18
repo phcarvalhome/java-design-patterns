@@ -1,17 +1,17 @@
 package com.phcarvalhome.pattern.composite.core;
 
-import com.phcarvalhome.pattern.builder.business.MarketOperationSchedule;
+import com.phcarvalhome.pattern.builder.business.OperationSchedule;
 
 import java.time.LocalDate;
 
-public class CompositeMarketOperationScheduleEvent
-        extends AbstractMarketOperationScheduleEvent {
+public class CompositeOperationScheduleEvent
+        extends AbstractOperationScheduleEvent {
 
-    private IMarketOperationScheduleEvent nextEvent;
+    private IOperationScheduleEvent nextEvent;
 
-    public CompositeMarketOperationScheduleEvent(MarketOperationSchedule schedule,
+    public CompositeOperationScheduleEvent(OperationSchedule schedule,
                                                  LocalDate date,
-                                                 IMarketOperationScheduleEvent nextEvent) {
+                                                 IOperationScheduleEvent nextEvent) {
         super(schedule, date);
         this.nextEvent = nextEvent;
     }

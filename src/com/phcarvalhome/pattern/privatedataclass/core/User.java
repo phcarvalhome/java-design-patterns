@@ -1,7 +1,7 @@
 package com.phcarvalhome.pattern.privatedataclass.core;
 
 import com.phcarvalhome.pattern.privatedataclass.business.Entity;
-import com.phcarvalhome.pattern.prototype.core.MarketOperation;
+import com.phcarvalhome.pattern.prototype.core.Operation;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -13,14 +13,14 @@ public class User extends Entity {
     private String password;
     private String bankBranch;
     private String bankAccount;
-    private List<MarketOperation> marketOperationList;
+    private List<Operation> operationList;
 
     public User(String email, String password, String bankBranch, String bankAccount) {
         this.email = email;
         this.password = password;
         this.bankBranch = bankBranch;
         this.bankAccount = bankAccount;
-        marketOperationList = new ArrayList<>();
+        operationList = new ArrayList<>();
     }
 
     public void changePassword(String currentPassword, String newPassword){
@@ -41,8 +41,8 @@ public class User extends Entity {
         }
     }
 
-    public void addMarketOperation(MarketOperation marketOperation){
-        marketOperationList.add(marketOperation);
+    public void addOperation(Operation operation){
+        operationList.add(operation);
     }
 
     public String getEmail() {
@@ -67,8 +67,8 @@ public class User extends Entity {
         return bankAccount;
     }
 
-    public List<MarketOperation> getMarketOperationList() {
-        return Collections.unmodifiableList(marketOperationList);
+    public List<Operation> getOperationList() {
+        return Collections.unmodifiableList(operationList);
     }
 
     @Override
@@ -78,7 +78,7 @@ public class User extends Entity {
                 ", password='" + password + '\'' +
                 ", bankBranch='" + bankBranch + '\'' +
                 ", bankAccount='" + bankAccount + '\'' +
-                ", marketOperationList=" + marketOperationList +
+                ", operationList=" + operationList +
                 "} " + super.toString();
     }
 }

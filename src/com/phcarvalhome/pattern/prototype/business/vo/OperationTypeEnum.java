@@ -1,6 +1,6 @@
 package com.phcarvalhome.pattern.prototype.business.vo;
 
-public enum MarketOperationTypeEnum {
+public enum OperationTypeEnum {
 
     BUY,
     SELL
