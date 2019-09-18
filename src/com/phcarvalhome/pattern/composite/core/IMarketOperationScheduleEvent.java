@@ -1,5 +1,6 @@
 package com.phcarvalhome.pattern.composite.core;
 
+import com.phcarvalhome.pattern.builder.business.MarketOperationSchedule;
 import com.phcarvalhome.pattern.prototype.business.vo.MarketOperationTypeEnum;
 import com.phcarvalhome.pattern.prototype.business.vo.StockTypeEnum;
 
@@ -8,9 +9,9 @@ import java.time.LocalTime;
 
 public interface IMarketOperationScheduleEvent {
 
-    LocalDate getStartDate();
+    MarketOperationSchedule getSchedule();
 
-    LocalDate getEndDate();
+    LocalDate getDate();
 
     LocalTime getScheduledTime();
 
