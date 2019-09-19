@@ -118,7 +118,7 @@
 ### 5. UC05 - Consumir notificação de sistema externo
 
   - [x] **Padrão de projeto:** Object Pool Pattern
-  - **Pré-requisito:** UC03
+  - **Pré-requisito:** UC01
   
   #### 5.1. Regras de negócio
 
@@ -171,7 +171,7 @@
 ### 7. UC07 - Obter, salvar, atualizar e remover usuário
 
   - [x] **Padrão de projeto:** Adapter Pattern
-  - **Pré-requisito:** UC03
+  - **Pré-requisito:** UC06
   
   #### 7.1. Regras de negócio
 
@@ -211,7 +211,7 @@
 ### 9. UC09 - Gerar eventos de agendamento de operação de mercado
 
   - [x] **Padrão de projeto:** Composite Pattern
-  - **Pré-requisito:** UC03
+  - **Pré-requisito:** UC04
   
   #### 9.1. Regras de negócio
 
