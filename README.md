@@ -81,7 +81,7 @@
     3.1.4. A operação de mercado duplicada deve ser composta pelos mesmos valores da operação de mercado original, com 
     exceção do valor do preço da ação que deve ser recalculado.
 
-#### 3.2. Detalhes de implementação
+  #### 3.2. Detalhes de implementação
 
   - [x] **Pacote:** *com.phcarvalhome.pattern.prototype*
   - Sobre o padrão de projeto
@@ -90,7 +90,7 @@
 
 ---
 
-### 4. UC04 - Criar agendamento para operação de mercado
+### 4. UC04 - Criar agendamento de operação de mercado
 
   - [x] **Padrão de projeto:** Builder Pattern
   - **Pré-requisito:** UC03
@@ -107,7 +107,7 @@
       - Estado: Ativo e Inativo
       - Lista de email para notificação
 
-#### 4.2. Detalhes de implementação
+  #### 4.2. Detalhes de implementação
 
   - [x] **Pacote:** *com.phcarvalhome.pattern.builder*
   - Sobre o padrão de projeto
@@ -132,7 +132,7 @@
       - Estado: Ativo e Inativo
       - Lista de email para notificação
 
-#### 5.2. Detalhes de implementação
+  #### 5.2. Detalhes de implementação
 
   - [x] **Pacote:** *com.phcarvalhome.pattern.objectpool*
   - Sobre o padrão de projeto
@@ -160,7 +160,7 @@
     6.1.5. A lista de operações de mercado apenas pode ser obtida de forma imutável
     6.1.6. A lista de operações de mercado apenas pode ser configurada pela adição de uma nova operação de mercado
 
-#### 6.2. Detalhes de implementação
+  #### 6.2. Detalhes de implementação
 
   - [x] **Pacote:** *com.phcarvalhome.pattern.privatedataclass*
   - Sobre o padrão de projeto
@@ -177,9 +177,49 @@
 
     7.1.1. Um usuário pode ser obtido, salvo, atualizado e removido.  
 
-#### 7.2. Detalhes de implementação
+  #### 7.2. Detalhes de implementação
 
   - [x] **Pacote:** *com.phcarvalhome.pattern.adapter*
+  - Sobre o padrão de projeto
+    - A classe *EntityDAO* representa a antiga API de acesso ao repositório.
+    - A interface *IEntityDAO<T>* representa a nova API de acesso ao repositório.
+    - A classe *UserDAOObjectAdapter* representa um "Object Adapter" que adapta a antiga API para a nova API.
+    - A classe *UserDAOClassAdapter* representa um "Class Adapter" que adapta a antiga API para a nova API.
+
+---
+
+### 8. UC08 - Gerar relatatório de operações de mercado de usuário
+
+  - [x] **Padrão de projeto:** Bridge Pattern
+  - **Pré-requisito:** UC03
+  
+  #### 8.1. Regras de negócio
+
+    8.1.1. Um relatório das operações de mercado de um usuário pode ser gerado.  
+
+  #### 8.2. Detalhes de implementação
+
+  - [x] **Pacote:** *com.phcarvalhome.pattern.bridge*
+  - Sobre o padrão de projeto
+    - A classe *EntityDAO* representa a antiga API de acesso ao repositório.
+    - A interface *IEntityDAO<T>* representa a nova API de acesso ao repositório.
+    - A classe *UserDAOObjectAdapter* representa um "Object Adapter" que adapta a antiga API para a nova API.
+    - A classe *UserDAOClassAdapter* representa um "Class Adapter" que adapta a antiga API para a nova API.
+  
+  ---
+
+### 9. UC09 - Gerar eventos de agendamento de operação de mercado
+
+  - [x] **Padrão de projeto:** Composite Pattern
+  - **Pré-requisito:** UC03
+  
+  #### 9.1. Regras de negócio
+
+    9.1.1. Os eventos de um agendamento de operação de mercado podem ser gerados.  
+
+  #### 9.2. Detalhes de implementação
+
+  - [x] **Pacote:** *com.phcarvalhome.pattern.composite*
   - Sobre o padrão de projeto
     - A classe *EntityDAO* representa a antiga API de acesso ao repositório.
     - A interface *IEntityDAO<T>* representa a nova API de acesso ao repositório.
