@@ -1,59 +1,25 @@
-package com.phcarvalhome.pattern.businessdelegation;
+package com.phcarvalhome.pattern.facade;
 
-import com.phcarvalhome.pattern.builder.business.OperationSchedule;
-import com.phcarvalhome.pattern.builder.client.BuilderClient;
-import com.phcarvalhome.pattern.builder.core.OperationScheduleBuilder;
-import com.phcarvalhome.pattern.prototype.business.vo.OperationTypeEnum;
-import com.phcarvalhome.pattern.prototype.business.vo.StockTypeEnum;
+import com.phcarvalhome.pattern.facade.client.FacadeClient;
 
-import java.time.LocalDate;
-import java.time.LocalTime;
-
-public class BusinessDelegationTest {
+public class FacadeTest {
 
     public static void main(String[] args) {
-        buildOperationScheduleForNextWeekInAfternoonInEveryDayOnActivation();
-        buildOperationScheduleForThisYearInEveryMonthOnDeactivationWithNotification();
+        printQuoteReportData();
     }
 
-    private static void buildOperationScheduleForNextWeekInAfternoonInEveryDayOnActivation() {
-        System.out.println(">>> TEST BEGINNING >>> buildOperationScheduleForNextWeekInAfternoonInEveryDayOnActivation");
+    private static void printQuoteReportData() {
+        System.out.println(">>> TEST BEGINNING >>> printQuoteReportData");
 
-        OperationScheduleBuilder builder = new OperationScheduleBuilder();
-        BuilderClient builderClient = new BuilderClient(builder);
-        OperationSchedule operationSchedule = builderClient.getOperationScheduleBuilder()
-                .ofStockType(StockTypeEnum.PETR4)
-                .ofOperationType(OperationTypeEnum.SELL)
-                .ofStockQuantity(10)
-                .from(LocalDate.now().plusWeeks(1))
-                .to(LocalDate.now().plusWeeks(2))
-                .at(LocalTime.of(14, 0))
-                .daily()
-                .active()
-                .getInstance();
+        FacadeClient facadeClient = new FacadeClient();
 
-        System.out.println("--- Built operation schedule: " + operationSchedule);
-        System.out.println(">>> TEST END >>> buildOperationScheduleForNextWeekInAfternoonInEveryDayOnActivation");
-    }
+        System.out.println("--- BRL/USD quote: " + facadeClient.getData().getBrlUSDQuote());
+        System.out.println("--- BRL/EUR quote: " + facadeClient.getData().getBrlEURQuote());
+        System.out.println("--- CAD/USD quote: " + facadeClient.getData().getCadUSDQuote());
+        System.out.println("--- CAD/EUR quote: " + facadeClient.getData().getCadEURQuote());
+        System.out.println("--- JPY/USD quote: " + facadeClient.getData().getJpyUSDQuote());
+        System.out.println("--- JPY/EUR quote: " + facadeClient.getData().getJpyEURQuote());
 
-    private static void buildOperationScheduleForThisYearInEveryMonthOnDeactivationWithNotification() {
-        System.out.println(">>> TEST BEGINNING >>> buildOperationScheduleForThisYearInEveryMonthOnDeactivationWithNotification");
-
-        OperationScheduleBuilder builder = new OperationScheduleBuilder();
-        BuilderClient builderClient = new BuilderClient(builder);
-        OperationSchedule operationSchedule = builderClient.getOperationScheduleBuilder()
-                .ofStockType(StockTypeEnum.VALE3)
-                .ofOperationType(OperationTypeEnum.BUY)
-                .ofStockQuantity(100)
-                .from(LocalDate.now())
-                .to(LocalDate.now().plusYears(1))
-                .monthly()
-                .inactive()
-                .ofNotificationEmail("phcarvalhome@gmail.com")
-                .ofNotificationEmail("phcarvalhome@outlook.com")
-                .getInstance();
-
-        System.out.println("--- Built operation schedule: " + operationSchedule);
-        System.out.println(">>> TEST END >>> buildOperationScheduleForThisYearInEveryMonthOnDeactivationWithNotification");
+        System.out.println(">>> TEST END >>> printQuoteReportData");
     }
 }
